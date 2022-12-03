@@ -1,18 +1,18 @@
 'use strict';
 
-// Родитель:
-// element.parentElement – родитель-элемент.
+// Батьківський елемент:
+// element.parentElement – батько-елемент.
 
-// Соседи:
-// element.previousElementSibling – предыдущий сосед-элемент.
-// element.nextElementSibling – lastElementChildследующий сосед-элемент.
+// Сусідні елементи:
+// element.previousElementSibling - попередній сусідній елемент.
+// element.nextElementSibling - наступний сусідній елемент.
 
-// Дети:
-// element.children – коллекция детей, которые являются элементами.
-// element.firstElementChild – первый дочерний элемент.
-// element.lastElementChild – последний дочерний элемент.
+// Дочірні елементи:
+// element.children - колекція дітей, які є елементами.
+// element.firstElementChild – перший дочірній елемент.
+// element.lastElementChild – останній дочірній елемент.
 
-// element.closest(selector) - найближчий батьківський елемент по селектору
+// element.closest(selector) - найближчий батьківський елемент за селектором
 
 const articleEl = document.querySelector('article.class1');
 console.log('articleEl.parentElement :>> ', articleEl.parentElement);
@@ -30,12 +30,14 @@ console.log('articleEl.lastElementChild :>> ', articleEl.lastElementChild);
 // знайти h3 через ul
 const ulEl = document.querySelector('ul');
 console.log('findH3:>> ', ulEl.previousElementSibling.previousElementSibling);
+// або
 console.log('ulEl :>> ', ulEl.parentElement.firstElementChild);
 
+// найближчий до ulEl батьківський елемент з класом class1
 console.log('ulEl.closest(".class1") :>> ', ulEl.closest('.class1'));
 
-// Повісити обробника подійн на всі елементи списку
-// і законсолеложити іх textContent, маючи посилання на ul
+// Ex.: Повісити обробника подійн на всі елементи списку
+// і законсолеложити їх textContent, маючи посилання на ul
 
 const liClickHandler = function (e) {
   console.log('this.textContent :>> ', this.textContent);
@@ -46,7 +48,7 @@ const liClickHandler = function (e) {
 for (const liEl of ulEl.children) {
   liEl.onclick = liClickHandler;
 }
-
+// або
 // [...ulEl.children].forEach(
 //   liEl =>
 //     (liEl.onclick = () => {

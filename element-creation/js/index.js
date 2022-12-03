@@ -1,5 +1,16 @@
 'use strict';
 
+// Створення елемента:
+//    document.createElement('elemType');
+// Додавання дочірнього:
+//    element.append(newEl) – після останнього дочірнього
+//    element.prepend(newEl) – перед першим дочірнім
+// Додавання сусіда:
+//    element.before(newEl) – перед елементом
+//    element.after(newEl) – після елемента
+// Видалення себе:
+//    element.remove()
+
 const sectionEl = document.querySelector('section');
 
 // append/prepend - додавання чайлдів
