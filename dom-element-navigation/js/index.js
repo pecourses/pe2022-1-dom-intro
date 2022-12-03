@@ -39,8 +39,8 @@ console.log('ulEl.closest(".class1") :>> ', ulEl.closest('.class1'));
 
 const liClickHandler = function (e) {
   console.log('this.textContent :>> ', this.textContent);
+  // або
   console.log('e.target.textContent :>> ', e.target.textContent);
-  console.log('e.target.innerHTML :>> ', e.target.innerHTML);
 };
 
 for (const liEl of ulEl.children) {
