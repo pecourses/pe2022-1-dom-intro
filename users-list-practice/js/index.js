@@ -40,10 +40,8 @@ const users = [
 
 const usersListEl = document.querySelector('.usersList');
 
-users.forEach(u => {
-  const usersListItemEl = createUsersListItem(u);
-  usersListEl.append(usersListItemEl);
-});
+const usersListItems = users.map(u => createUsersListItem(u));
+usersListEl.append(...usersListItems);
 
 function createUsersListItem({ photoSrc, age, firstName, lastName }) {
   const usersListItemEl = document.createElement('li');
